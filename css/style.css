@@ -1,0 +1,21 @@
+
+#message {
+    color:#009900;
+}
+#score {
+    color:#0000FF;
+}
+#videoArea {
+    position:relative;
+}
+
+video {
+    transform: scaleX(-1);
+    background-color: #000000;
+}
+
+canvas {
+    position:absolute;
+    top:0px;
+    left:0px;
+}
