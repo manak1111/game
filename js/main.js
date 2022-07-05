@@ -72,7 +72,7 @@ const movePlayer = event => {
 }
 
 const update = () => {
-    context.fillStyle = "rgba(0,0,0,0.5)";
+    context.fillStyle = "rgba(0,0,60,0.5)";
     context.fillRect(0,0, canvas.width, canvas.height);
     for (const star of stars){
         if(Math.random() > 0.1)drawCircle(star.x, star.y, star.r, "white");
@@ -86,7 +86,8 @@ const update = () => {
             points.push(new Shot("point"));
         }
 
-        const shape = [[0, 10], [20, 20], [0, -20], [-20, 20]];
+        
+        const shape = [[20, 20], [0, -20], [-20, 20]];
         context.fillStyle = "tomato";
         context.beginPath();
         context.moveTo(px + shape[0][0], py + shape[0][1]);
@@ -134,9 +135,9 @@ const update = () => {
     drawText(`TIME: ${(time/1000).toFixed(1)}`, 5, 5, 20, "white", "left", "top");
     if(status == "end") {
         drawText("GAME OVER", width/2, height/2 - 30, 50, "red");
-        drawText("Click here to replay", width/2, height/2+20, 30, "red");
+        drawText("Click here to replay", width/2, height/2+20, 30, "white");
     } else if (status == "ready") {
-        drawText("Click here to start", width/2, height/2+20, 30, "red");
+        drawText("Click here to start", width/2, height/2+20, 30, "white");
     }
     window.requestAnimationFrame(update);
 }
